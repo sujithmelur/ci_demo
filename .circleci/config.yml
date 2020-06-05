@@ -1,4 +1,4 @@
-version: 2
+version: 2.1
 jobs:
   build:
     working_directory: /app
@@ -19,3 +19,9 @@ jobs:
           name: Build Docker Image
           command: |
             docker build -t ci_demo .
+            
+workflows:
+  build-test:
+    jobs:
+      - build         
+ 
