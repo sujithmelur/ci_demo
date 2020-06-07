@@ -44,6 +44,12 @@ jobs:
             
             $LOGIN_COMMAND
             
+      - run:
+          name: Tagging
+          command:
+            docker tag ci_demo "$AWS_ECR_ACCOUNT_URL/ci_demo:${CIRCLE_SHA1}"
+            docker images
+            
 workflows:
   build-test:
     jobs:
