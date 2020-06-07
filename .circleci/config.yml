@@ -41,10 +41,9 @@ jobs:
           command: >
         # aws ecr get-login returns a login command w/ a temp token
 
-          LOGIN_COMMAND=$(aws ecr get-login --no-include-email --region
-          $AWS_REGION 
-          --profile default
-          $LOGIN_COMMAND
+            LOGIN_COMMAND=$(aws ecr get-login --no-include-email --region $AWS_REGION \
+            --profile default
+            $LOGIN_COMMAND
             
 workflows:
   build-test:
