@@ -48,6 +48,12 @@ jobs:
           name: Tagging
           command:
             docker tag ci_demo "$AWS_ECR_ACCOUNT_URL/ci_demo:${CIRCLE_SHA1}"
+            
+            
+      - run:
+          name: List images
+          command:
+            
             docker images
             
 workflows:
