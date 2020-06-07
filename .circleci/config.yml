@@ -19,7 +19,7 @@ jobs:
           name: Build Docker Image
           command: |
             docker build -t ci_demo .
-       - run:
+      - run:
           name: Configure AWS access Key
           command: |
             aws configure set aws_access_key_id \
