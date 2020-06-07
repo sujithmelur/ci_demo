@@ -56,6 +56,12 @@ jobs:
             
             docker images
             
+      - run:
+          name: Push image
+          command:
+            
+            docker push "$ECR_ENDPOINT/ci_demo:${CIRCLE_SHA1}"
+            
 workflows:
   build-test:
     jobs:
