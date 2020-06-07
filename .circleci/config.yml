@@ -19,6 +19,23 @@ jobs:
           name: Build Docker Image
           command: |
             docker build -t ci_demo .
+       - run:
+          name: Configure AWS access Key
+          command: |
+            aws configure set aws_access_key_id \
+            $AWS_ACCESS_KEY_ID \
+            --profile default
+      - run:
+          name: Configure AWS Secret Key
+          command: |
+            aws configure set aws_secret_access_key \
+            $AWS_SECRET_ACCESS_KEY \
+            --profile default
+      - run:  
+          name: Configure AWS Region
+          command: |
+            aws configure set region $AWS_REGION \
+            --profile default
             
 workflows:
   build-test:
