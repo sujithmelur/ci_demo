@@ -38,11 +38,11 @@ jobs:
             --profile default
       - run:
           name: ECR Login
-          command: |
-        # aws ecr get-login returns a login command w/ a temp token
-
+          command: >
+        
             LOGIN_COMMAND=$(aws ecr get-login --no-include-email --region $AWS_REGION \
             --profile default
+            
             $LOGIN_COMMAND
             
 workflows:
