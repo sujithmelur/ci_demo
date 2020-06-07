@@ -47,7 +47,7 @@ jobs:
       - run:
           name: Tagging
           command:
-            docker tag ci_demo "$AWS_ECR_ACCOUNT_URL/ci_demo:${CIRCLE_SHA1}"
+            docker tag ci_demo "$ECR_ENDPOINT/ci_demo:${CIRCLE_SHA1}"
             
             
       - run:
